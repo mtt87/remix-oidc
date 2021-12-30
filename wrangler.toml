@@ -1,0 +1,33 @@
+name = "remix-oidc"
+type = "javascript"
+
+zone_id = ""
+account_id = "6b47f34384cdb3bb1820393dec7a3ced"
+route = ""
+workers_dev = true
+
+compatibility_date = "2021-12-30"
+
+kv_namespaces = [ 
+	 { binding = "REMIX_AUTH", id = "58f5f5d2f70a47c780df83bf11fbb5fc", preview_id = "58f5f5d2f70a47c780df83bf11fbb5fc" }
+]
+
+[vars]
+AUTH0_CLIENT_ID = "Alm2OlLPf27zvHuQzvKEIvVM5LCJa5fd"
+AUTH0_REDIRECT_URI = "https://remix-oidc.mattia-asti.workers.dev/auth/callback"
+AUTH0_DOMAIN = "remix-oidc.eu.auth0.com"
+
+# secrets
+# COOKIE_SECRET
+# AUTH0_CLIENT_SECRET
+
+[site]
+bucket = "./public"
+entry-point = "."
+
+[build]
+command = "npm run build:worker"
+watch_dir = "build/index.js"
+
+[build.upload]
+format="service-worker"
